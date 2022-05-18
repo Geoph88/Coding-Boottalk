@@ -10,6 +10,16 @@ get '/social/new' do
     erb :'social/new'
 end
 
+post '/social' do
+    name = params['name']
+    image_url = params['image_url']
+    post = params['post']
+
+    create_post(name, image_url, post)
+
+    redirect '/'
+end
+
 get '/social/:id/edit' do
     id = params['id']
 
@@ -26,7 +36,6 @@ put '/social/:id' do
     image_url = params['image_url']
     post = params['post']
 
-  
     update_post(name, image_url, post, id)
   
     redirect '/'
