@@ -1,0 +1,46 @@
+<h1>hello world</h1>
+
+<section>
+
+<% if logged_in? %>
+<h2>Welcome <%= current_user['name'] %></h2>
+
+<a href="/social/new">Add new post</a>
+
+<form action="/sessions" method="POST">
+    <input type="hidden" name="_method" value="delete">
+    <button>Logout</button>
+</form>
+
+<section class="all-posts">
+    <% social_posts.each do |posts| %>
+    <article class="post-item">
+    <h2><%= posts['name'] %></h2>
+    
+    <a href="/social/<%= posts['id'] %>/edit">edit</a>
+
+
+    <img src="<%= posts['image_url'] %>" alt="">
+
+    <p><%= posts['post'] %></p>
+    </article>
+
+
+    <form action="/social/<%= posts['id'] %>" method="POST">
+        <input type="hidden" name="_method" value="delete">
+
+        <button>delete</button>
+    </form>
+
+        
+    <% end %>
+
+</section>
+
+<% else %>
+    <a href="/sign_up">Sign up</a>
+    <a href="/login">login</a>
+<% end %>
+
+
+
