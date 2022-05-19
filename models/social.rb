@@ -1,6 +1,10 @@
 def all_posts
+    run_sql("SELECT * FROM account ORDER BY id")
+end
+
+
+def user_posts
     run_sql("SELECT * FROM account WHERE user_id = $1" ,[current_user['id']])
-    # ("SELECT * FROM account ORDER BY id")
 end
 
 def create_post(name, image_url, post, user_id)

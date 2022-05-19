@@ -1,28 +1,21 @@
 get '/' do
 
-    if logged_in?
     social_posts = all_posts()
 
     erb :'social/index', locals: {
         social_posts: social_posts
     }
-
-    else
-        erb :'social/index', locals: {
-            social_posts: social_posts
-        }
-    end
 end
 
 get '/social/new' do
     erb :'social/new'
 end
 
-get '/personal_page' do
+get '/social/user_page' do
 
     social_posts = all_posts()
-    
-    erb :'social/personal_page', locals: {
+
+    erb :'social/user_page', locals: {
         social_posts: social_posts
     }
 end
