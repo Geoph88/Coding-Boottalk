@@ -1,9 +1,17 @@
 get '/' do
+
+    if logged_in?
     social_posts = all_posts()
 
     erb :'social/index', locals: {
         social_posts: social_posts
     }
+
+    else
+        erb :'social/index', locals: {
+            social_posts: social_posts
+        }
+    end
 end
 
 get '/social/new' do
@@ -14,8 +22,9 @@ post '/social' do
     name = params['name']
     image_url = params['image_url']
     post = params['post']
+    user_id = current_user['id']
 
-    create_post(name, image_url, post)
+    create_post(name, image_url, post, user_id)
 
     redirect '/'
 end
