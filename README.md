@@ -5,6 +5,8 @@
 Project 2 is to create a a working full-stack application that is hosted somewhere on the internet. My solution to this is to create a social media for coding bootcamp attendees.
 This project will be primarly done using Sinatra, ruby, sql, HTML, CSS and possibly Javascript
 
+Visit my project here: <a href= "https://still-sands-56902.herokuapp.com/">
+
 Must haves include features that allow users to sign up, log in and log out. Have two resource tables: one representing a a user using the app and one that represents the main functional idea for the app. Include RESTful routes for at least one of my resources. Make sure the HTML and CSS is readable
 Will have for my idea: users being able to see information specifically they have posted on their profile. Posts made by an individual user and a like function 
 Nice to have: Emojis in the like feature, sound on some buttons
