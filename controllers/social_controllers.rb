@@ -12,21 +12,21 @@ get '/social/new' do
 end
 
 get '/social/user_page' do
-
-    personal_posts = personal_posts()
+    if logged_in?
+    personal_posts = user_posts()
 
     erb :'social/user_page', locals: {
         personal_posts: personal_posts
     }
+    end
 end
 
 post '/social' do
-    name = params['name']
-    image_url = params['image_url']
     post = params['post']
+    feeling = params['feeling']
     user_id = current_user['id']
 
-    create_post(name, image_url, post, user_id)
+    create_post(post, feeling, user_id)
 
     redirect '/'
 end
@@ -42,12 +42,11 @@ get '/social/:id/edit' do
 end
 
 put '/social/:id' do
-    id = params['id']
-    name = params['name']
-    image_url = params['image_url']
-    post = params['post']
 
-    update_post(name, image_url, post, id)
+    post = params['post']
+    feeling = params['feeling']
+
+    update_post(post, feeling)
   
     redirect '/'
 end
