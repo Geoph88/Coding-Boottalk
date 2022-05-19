@@ -19,7 +19,9 @@
 <section class="all-posts">
     <% social_posts.each do |posts| %>
     <article class="post-item">
-    <h2><%= posts['user_name'] %></h2>
+    <h2><%= posts['name'] %></h2>
+
+    <img src="<%= posts['user_name']%>" alt="">
 
     <a href="/social/<%= posts['id'] %>/edit">edit</a>
 
