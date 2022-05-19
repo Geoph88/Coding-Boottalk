@@ -1,3 +1,5 @@
+<% if logged_in? %>
+
 <h1><%= current_user['name'] %>'s Page</h1>
 
 <a href="/social/new">Add new post</a>
@@ -10,9 +12,9 @@
 <a href="/personal_page">Your page</a>
 
 <section class="all-posts">
-    <% social_posts.each do |posts| %>
+    <% personal_posts.each do |posts| %>
     <article class="post-item">
-    <h2><%= posts['name'] %></h2>
+    <h2><%= posts['user_name'] %></h2>
 
     <a href="/social/<%= posts['id'] %>/edit">edit</a>
 
@@ -28,8 +30,7 @@
 
         <button>delete</button>
     </form>
-
-        
     <% end %>
-
 </section>
+
+<% end %>

@@ -14,10 +14,12 @@
 
 <a href="/social/user_page">Your page</a>
 
+
+
 <section class="all-posts">
     <% social_posts.each do |posts| %>
     <article class="post-item">
-    <h2><%= posts['name'] %></h2>
+    <h2><%= posts['user_name'] %></h2>
 
     <a href="/social/<%= posts['id'] %>/edit">edit</a>
 
@@ -28,7 +30,7 @@
     </article>
 
 
-    <form action="/social/<%= posts['id'] %>" method="POST">
+    <form action="/social/<%= posts['id'] %>"method="POST">
         <input type="hidden" name="_method" value="delete">
 
         <button>delete</button>

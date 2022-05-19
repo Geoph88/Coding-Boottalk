@@ -12,3 +12,4 @@ CREATE TABLE users(
 
 ALTER TABLE users ADD COLUMN password_digest TEXT; 
 
+SELECT users.name AS user_name, account.name, account.image_url, account.post FROM account INNER JOIN users ON users.id = account.user_id;

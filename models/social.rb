@@ -1,7 +1,10 @@
-def all_posts
+def personal_posts
     run_sql("SELECT * FROM account ORDER BY id")
 end
 
+def all_posts
+    run_sql("SELECT users.name AS user_name, account.name, account.image_url, account.post FROM account INNER JOIN users ON users.id = account.user_id")
+end
 
 def user_posts
     run_sql("SELECT * FROM account WHERE user_id = $1" ,[current_user['id']])
@@ -22,3 +25,5 @@ end
 def delete_post(id)
     run_sql("DELETE FROM account WHERE id = $1", [id])
 end
+
+# SELECT users.name AS user_name, account.name, account.image_url, account.post FROM account INNER JOIN users ON users.id = account.user_id;

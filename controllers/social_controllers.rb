@@ -13,10 +13,10 @@ end
 
 get '/social/user_page' do
 
-    social_posts = all_posts()
+    personal_posts = personal_posts()
 
     erb :'social/user_page', locals: {
-        social_posts: social_posts
+        personal_posts: personal_posts
     }
 end
 
