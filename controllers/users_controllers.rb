@@ -1,4 +1,4 @@
-get '/sign_up' do
+get '/user/sign_up' do
     erb :'users/new'
 end
 
@@ -12,4 +12,11 @@ post '/create_user' do
     create_user(name, email, image_url, bootcamp, password)
 
     redirect '/'
+end
+
+
+get '/user/other_user_page' do
+    
+    erb :'/users/other_user_page'
+
 end

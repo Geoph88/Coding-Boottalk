@@ -3,7 +3,7 @@ def personal_posts
 end
 
 def all_posts
-    run_sql("SELECT users.name, users.image_url AS user_name, posts.post, posts.feeling FROM posts INNER JOIN users ON users.id = posts.user_id")
+    run_sql("SELECT users.bootcamp, users.image_url, users.name AS user_name, posts.post, posts.feeling FROM posts INNER JOIN users ON users.id = posts.user_id;")
 end
 
 def user_posts
@@ -26,4 +26,9 @@ def delete_post(id)
     run_sql("DELETE FROM posts WHERE id = $1", [id])
 end
 
-# SELECT users.name AS user_name, account.name, account.image_url, account.post FROM account INNER JOIN users ON users.id = account.user_id;
+# SELECT users.name, users.image_url, users.bootcamp AS user_name, posts.name, posts.image_url, posts.post FROM posts INNER JOIN users ON users.id = posts.user_id;
+
+# SELECT users.bootcamp, users.image_url, users.name AS user_name, posts.post, posts.feeling FROM posts INNER JOIN users ON users.id = posts.user_id;
+
+
+# SELECT users.name, users.image_url AS user_name, posts.post, posts.feeling FROM posts INNER JOIN users ON users.id = posts.user_id

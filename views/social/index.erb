@@ -9,28 +9,25 @@
 
 <form action="/sessions" method="POST">
     <input type="hidden" name="_method" value="delete">
-    <button>Logout</button>
+    <button>Console.Logout</button>
 </form>
 
 <a href="/social/user_page">Your page</a>
 
-
-
 <section class="all-posts">
     <% social_posts.each do |posts| %>
     <article class="post-item">
-    <h2><%= posts['name'] %></h2>
-
-    <img src="<%= posts['user_name']%>" alt="">
-
-    <a href="/social/<%= posts['id'] %>/edit">edit</a>
-
+    <h2><a href="/user/other_user_page"><%= posts['user_name'] %></a></h2>
 
     <img src="<%= posts['image_url'] %>" alt="">
 
+    <h3><%= posts['bootcamp']%></h3>
+
     <p><%= posts['post'] %></p>
 
-    <p><%= posts['feeling'] %></p>
+    <p>Feeling: <%= posts['feeling'] %></p>
+
+     <a href="/social/<%= posts['id'] %>/edit">edit</a>
     </article>
 
 

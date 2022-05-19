@@ -1,4 +1,4 @@
-def create_user(name, email, image_url, bootcamp,password)
+def create_user(name, email, image_url, bootcamp, password)
 
     password_digest = BCrypt::Password.create(password)
 

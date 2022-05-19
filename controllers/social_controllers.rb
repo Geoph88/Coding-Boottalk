@@ -59,4 +59,3 @@ delete '/social/:id' do
 
     redirect '/'
 end
-
