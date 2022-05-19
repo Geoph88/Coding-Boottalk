@@ -9,7 +9,7 @@ post '/create_user' do
     bootcamp = params['bootcamp']
     password = params['password']
 
-    create_user(name, email, password)
+    create_user(name, email, image_url, bootcamp, password)
 
     redirect '/'
 end
