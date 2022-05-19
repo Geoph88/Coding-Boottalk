@@ -18,6 +18,15 @@ get '/social/new' do
     erb :'social/new'
 end
 
+get '/personal_page' do
+
+    social_posts = all_posts()
+    
+    erb :'social/personal_page', locals: {
+        social_posts: social_posts
+    }
+end
+
 post '/social' do
     name = params['name']
     image_url = params['image_url']

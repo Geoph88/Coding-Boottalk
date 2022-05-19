@@ -1,9 +1,4 @@
-<h1>hello world</h1>
-
-<section>
-
-<% if logged_in? %>
-<h2>Welcome <%= current_user['name'] %></h2>
+<h1><%= current_user['name'] %>'s Page</h1>
 
 <a href="/social/new">Add new post</a>
 
@@ -38,11 +33,3 @@
     <% end %>
 
 </section>
-
-<% else %>
-    <a href="/sign_up">Sign up</a>
-    <a href="/login">login</a>
-<% end %>
-
-
-
