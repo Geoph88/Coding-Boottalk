@@ -3,7 +3,7 @@ def personal_posts
 end
 
 def all_posts
-    run_sql("SELECT users.bootcamp, users.image_url, users.name, posts.user_id AS user_id, posts.post, posts.feeling FROM posts INNER JOIN users ON users.id = posts.user_id;")
+    run_sql("SELECT users.bootcamp, users.image_url, users.name, posts.user_id AS user_id, posts.post, posts.feeling FROM posts INNER JOIN users ON users.id = posts.user_id")
 end
 
 def user_posts
