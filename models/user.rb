@@ -26,3 +26,7 @@ end
 def get_other_user_posts(user_id)
     run_sql("SELECT * FROM posts WHERE user_id = $1", [user_id])
 end
+
+def get_other_user_information(name, bootcamp, image_url, id)
+    run_sql("SELECT name = $1, bootcamp = $2, image_url = $3, FROM users WHERE id = $4", [name, bootcamp, image_url, id])
+end

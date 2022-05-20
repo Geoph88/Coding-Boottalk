@@ -22,8 +22,6 @@ def update_post(post, feeling, id)
     run_sql("UPDATE posts SET post = $1, feeling = $2 WHERE id = $3", [post, feeling, id])
 end
 
-
-
 def delete_post(id)
     run_sql("DELETE FROM posts WHERE id = $1", [id])
 end

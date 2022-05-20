@@ -1,3 +1,12 @@
+<%other_user_information.each do |user|%>
+
+<h1><%= user['id'] %></h1>
+
+<img src="<%= user['image_url']%>" alt="">
+
+<p><%= user['bootcamp'] %></p>
+
+<% end %>
 
 <% social_posts.each do |posts| %>
     <article class="post-item">
