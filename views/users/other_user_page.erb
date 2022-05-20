@@ -1,11 +1,6 @@
 
   <% social_posts.each do |posts| %>
     <article class="post-item">
-        <h1><%= posts['user_name'] %></h1>
-
-        <img src="<%= posts['image_url'] %>" alt="">
-
-        <h3><%= posts['bootcamp']%></h3>
 
         <p><%= posts['post'] %></p>
 
@@ -14,4 +9,6 @@
     </article>
 
 <% end %>
+
+
 

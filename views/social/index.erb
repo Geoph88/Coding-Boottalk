@@ -17,8 +17,7 @@
 <section class="all-posts">
     <% social_posts.each do |posts| %>
     <article class="post-item">
-    <h2><a href="/users/<%= posts['user_id'] %>/other_user_page"><%= posts['name'] %></a></h2>
-
+    <h2><a href="/user/<%= posts['user_id'] %>/other_user_page/"><%= posts['name'] %></a></h2>
     <img src="<%= posts['image_url'] %>" alt="">
 
     <h3><%= posts['bootcamp']%></h3>
