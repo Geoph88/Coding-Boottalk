@@ -1,18 +1,13 @@
 <h1>Edit food</h1>
 
-<form action="/social/> <%= posts['id'] %>" method=POST>
+<form action="/social/<%= posts['id'] %>" method=POST>
     <input type="hidden" name="_method" value="put">
 
-    <label for="">Name:</label>
-    <input type="text" name='name' value="<%= posts['name']%>">
+    <label for="">Post:</label>
+    <input type="text" name='post' value="<%= posts['post']%>">
 
-    <label for="">Your picture:</label>
-    <input type="text" name='image_url' value= <%= posts['image_url'] %>>
-
-    <label for="">Your post:</label>
-    <input type="text" name='post' value= <%= posts['post'] %>>
+    <label for="">Feeling:</label>
+    <input type="text" name='feeling' value="<%= posts['feeling'] %>">
 
     <button>Update post</button>
-
-
 </form>

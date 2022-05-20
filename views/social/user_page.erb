@@ -17,14 +17,15 @@
     <a href="/social/<%= posts['id'] %>/edit">edit</a>
 
 
-    <img src="<%= posts['image_url'] %>" alt="">
-
     <p><%= posts['post'] %></p>
+    <p><%= posts['feeling'] %></p>
+
     </article>
 
 
     <form action="/social/<%= posts['id'] %>" method="POST">
         <input type="hidden" name="_method" value="delete">
+
 
         <button>delete</button>
     </form>
@@ -32,3 +33,4 @@
 </section>
 
 <% end %>
+

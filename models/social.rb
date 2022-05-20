@@ -1,9 +1,9 @@
 def personal_posts
-    run_sql("SELECT * FROM posts ORDER BY id DESC")
+    run_sql("SELECT * FROM posts ORDER BY id")
 end
 
 def all_posts
-    run_sql("SELECT users.bootcamp, users.image_url, users.name AS user_name, posts.post, posts.feeling FROM posts INNER JOIN users ON users.id = posts.user_id;")
+    run_sql("SELECT users.bootcamp, users.image_url, users.name, posts.user_id AS user_id, posts.post, posts.feeling FROM posts INNER JOIN users ON users.id = posts.user_id;")
 end
 
 def user_posts
@@ -18,9 +18,11 @@ def get_post(id)
     run_sql("SELECT * FROM posts WHERE id = $1", [id])[0]
 end
 
-def update_post(post, feeling, user_id)
+def update_post(post, feeling, id)
     run_sql("UPDATE posts SET post = $1, feeling = $2 WHERE id = $3", [post, feeling, id])
 end
+
+
 
 def delete_post(id)
     run_sql("DELETE FROM posts WHERE id = $1", [id])
@@ -32,3 +34,5 @@ end
 
 
 # SELECT users.name, users.image_url AS user_name, posts.post, posts.feeling FROM posts INNER JOIN users ON users.id = posts.user_id
+
+# "SELECT users.bootcamp, users.image_url, users.name AS user_name, posts.post, posts.feeling FROM posts INNER JOIN users ON users.id = posts.user_id;"

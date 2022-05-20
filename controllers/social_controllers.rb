@@ -43,12 +43,12 @@ end
 
 put '/social/:id' do
 
+    id = params['id']
     post = params['post']
     feeling = params['feeling']
-
-    update_post(post, feeling)
-  
-    redirect '/'
+    
+    update_post(post, feeling, id)
+    redirect '/social/user_page'
 end
 
 
@@ -57,5 +57,5 @@ delete '/social/:id' do
 
     delete_post(id)
 
-    redirect '/'
+    redirect '/social/user_page'
 end
