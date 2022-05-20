@@ -24,5 +24,5 @@ def get_user_by_name(name)
 end
 
 def get_other_user_posts(user_id)
-    run_sql("SELECT * FROM posts WHERE user_id = $1", [user_id])[0]
+    run_sql("SELECT * FROM posts WHERE user_id = $1", [user_id])
 end

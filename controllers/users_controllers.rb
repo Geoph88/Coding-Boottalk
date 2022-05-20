@@ -20,6 +20,8 @@ get '/user/:user_id/other_user_page/' do
     user_id = params['user_id']
     social_posts = get_other_user_posts(user_id)
 
+    binding.pry
+
     erb :'users/other_user_page', locals: {
         social_posts: social_posts
     }
