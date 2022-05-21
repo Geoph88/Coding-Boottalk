@@ -8,6 +8,9 @@ get '/' do
 end
 
 get '/social/new' do
+
+    @time_and_date = Time.now.to_s.slice(0, 16)
+
     erb :'social/new'
 end
 
@@ -22,11 +25,13 @@ get '/social/user_page' do
 end
 
 post '/social' do
+
     post = params['post']
     feeling = params['feeling']
+    time_and_date = params['time_and_date']
     user_id = current_user['id']
 
-    create_post(post, feeling, user_id)
+    create_post(post, feeling, time_and_date, user_id)
 
     redirect '/'
 end
@@ -49,6 +54,7 @@ put '/social/:id' do
     
     update_post(post, feeling, id)
     redirect '/social/user_page'
+
 end
 
 

@@ -1,17 +1,17 @@
 def personal_posts
-    run_sql("SELECT * FROM posts ORDER BY id")
+    run_sql("SELECT * FROM posts ORDER BY id DESC")
 end
 
 def all_posts
-    run_sql("SELECT users.bootcamp, users.image_url, users.name, posts.user_id AS user_id, posts.post, posts.feeling FROM posts INNER JOIN users ON users.id = posts.user_id")
+    run_sql("SELECT users.bootcamp, users.image_url, users.name, posts.user_id AS user_id, posts.post, posts.feeling, posts.time_and_date FROM posts INNER JOIN users ON users.id = posts.user_id ORDER BY posts.id DESC")
 end
 
 def user_posts
     run_sql("SELECT * FROM posts WHERE user_id = $1" ,[current_user['id']])
 end
 
-def create_post(post, feeling, user_id)
-    run_sql("INSERT INTO posts (post, feeling, user_id) VALUES($1, $2, $3)", [post, feeling, user_id])
+def create_post(post, feeling, time_and_date, user_id)
+    run_sql("INSERT INTO posts (post, feeling, time_and_date, user_id) VALUES($1, $2, $3, $4)", [post, feeling, time_and_date, user_id])
 end
 
 def get_post(id)

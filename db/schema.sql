@@ -16,5 +16,9 @@ SELECT users.name AS user_name, posts.post, posts.feeling FROM posts INNER JOIN 
 
 SELECT post FROM posts AS user_posts INNER JOIN users ON posts.user_id = user_id WHERE posts.user_id == users.id;
 
+ALTER TABLE posts ADD COLUMN time_and_date TEXT;
+
+
+
 -- original database join code
 -- SELECT users.name AS user_name, account.name, account.image_url, account.post FROM account INNER JOIN users ON users.id = account.user_id;
