@@ -1,6 +1,7 @@
 <% if logged_in? %>
 
 <h1><%= current_user['name'] %>'s Page</h1>
+<img src="<%= current_user['image']%>" alt="">
 
 <a href="/social/new">Add new post</a>
 

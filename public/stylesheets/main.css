@@ -68,10 +68,38 @@ a:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 70%;
+    margin: auto;
+}
+
+.post-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    width: inherit;
+}
+
+.post-heading img {
+    width: 35%;
+    border: 1px solid #ddd;
+    border-radius: 50%;
 }
 
 .post-item {
     background: white;
-    margin: 20px;
-    border-radius: 15px;
+    width: inherit;
+    margin: 0px 20px 25px 20px;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+}
+
+#home-page-post {
+    margin: 15px;
+}
+
+#home-page-feeling {
+    margin: 15px;
 }

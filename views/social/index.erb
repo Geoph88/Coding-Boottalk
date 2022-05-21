@@ -3,34 +3,34 @@
 <% if logged_in? %>
 <h2>Welcome <%= current_user['name'] %></h2>
 
-<a href="/social/new">Add new post</a>
 
-<form action="/sessions" method="POST">
-    <input type="hidden" name="_method" value="delete">
-    <button>Console.Logout</button>
-</form>
+    <aside>
+    <a href="/social/new">Add new post</a>
 
-<a href="/social/user_page">Your page</a>
-
-<section class="all-posts">
-    <% social_posts.each do |posts| %>
-    <article class="post-item">
-            <div class="post-heading"></div>
-            <img src="<%= posts['image_url'] %>" alt="">
-            <h2><a href="/user/<%= posts['user_id'] %>/other_user_page/"><%= posts['name'] %></a></h2>
-        </div>
-        <%# <time class="time_of_post"></time> %>
-        <h3><%= posts['bootcamp']%></h3>
-        <p><%= posts['post'] %></p>
-        <p>Feeling: <%= posts['feeling'] %></p>
-
-    </article>
+    <form action="/sessions" method="POST">
+        <input type="hidden" name="_method" value="delete">
+        <button>Console.Logout</button>
     </form>
 
-        
-    <% end %>
+    <a href="/social/user_page">Your page</a>
+    </aside>
 
-</section>
+    <section class="all-posts">
+        <% social_posts.each do |posts| %>
+            <div class="post-heading">
+                <img src="<%= posts['image_url'] %>" class="user-image"alt="">
+                <h2><a href="/user/<%= posts['user_id'] %>/other_user_page/"><%= posts['name'] %></a></h2>
+                <h3><%= posts['bootcamp']%></h3>
+            </div>
+        <article class="post-item">
+            <span>
+                <p id="home-page-post"><%= posts['post'] %></p>
+                <p id="home-page-feeling">Feeling: <%= posts['feeling'] %></p>
+            </span>
+        </article>
+        </form>
+        <% end %>
+    </section>
 
 <% else %>
     <div class='heading container'>
