@@ -1,34 +1,37 @@
 <% if logged_in? %>
 
-<h1><%= current_user['name'] %>'s Page</h1>
-<img src="<%= current_user['image']%>" alt="">
+<header class="user_heading">
+    <img src="<%= current_user['image_url']%>" alt="">
+    <h1><%= current_user['name'] %>'s Page</h1>
+</header>
 
-<a href="/social/new">Add new post</a>
+<section class="personal-posts">
 
-<form action="/sessions" method="POST">
-    <input type="hidden" name="_method" value="delete">
-    <button>Logout</button>
-</form>
+    <aside class="side-user-bar">
+            <a href="/social/new">Add new post</a>
+            <form action="/sessions" method="POST">
+                <input type="hidden" name="_method" value="delete">
+                <button>Logout</button>
+            </form>
+    </aside>
 
-<section class="all-posts">
-    <% personal_posts.each do |posts| %>
-    <article class="post-item">
-    <h2><%= posts['user_name'] %></h2>
+    <article>
+        <% personal_posts.each do |posts| %>
+        <article class="user-post-item">
 
-    <a href="/social/<%= posts['id'] %>/edit">edit</a>
+            <p><%= posts['post'] %></p>
+            <p>Feeling:<%= posts['feeling'] %></p>
+        
+            <div class="edit-and-delete-container">
+                <a href="/social/<%= posts['id'] %>/edit">✏️</a>
 
+                <form action="/social/<%= posts['id'] %>" method="POST">
+                    <input type="hidden" name="_method" value="delete">
 
-    <p><%= posts['post'] %></p>
-    <p><%= posts['feeling'] %></p>
-
+                    <button>Delete</button>
+                </form>
+            </div>
     </article>
-
-
-    <form action="/social/<%= posts['id'] %>" method="POST">
-        <input type="hidden" name="_method" value="delete">
-
-        <button>delete</button>
-    </form>
     
     <% end %>
 </section>

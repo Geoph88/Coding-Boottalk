@@ -1,8 +1,15 @@
-body {
-    background-color: rgb(0, 123, 255);
+.night-mode {
+    background-color: black;
 }
 
-.heading_container {
+.home-page {
+    display: grid;
+    justify-content: center;
+    justify-items: start;
+    grid-auto-columns: 1fr 3fr;
+}
+
+.heading-container {
     display: flex;
     justify-content: center;
     font-size: 50px;
@@ -68,7 +75,7 @@ a:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 70%;
+    width: 60%;
     margin: auto;
 }
 
@@ -83,8 +90,9 @@ a:hover {
 }
 
 .post-heading img {
-    width: 35%;
-    border: 1px solid #ddd;
+    width: 100px;
+    height: 100px;
+    border: 3px solid #ddd;
     border-radius: 50%;
 }
 
@@ -94,6 +102,7 @@ a:hover {
     margin: 0px 20px 25px 20px;
     border-bottom-left-radius: 40px;
     border-bottom-right-radius: 40px;
+    padding-top: 20px;
 }
 
 #home-page-post {
@@ -102,4 +111,80 @@ a:hover {
 
 #home-page-feeling {
     margin: 15px;
+}
+
+.side-user-bar {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+}
+
+.add-a-new-post-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.create-a-new-post {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style-type: none;
+}
+
+/* css for user_page.erb */
+
+.user-heading {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.user-heading img {
+    width: 200px;
+    height: 200px;
+    border: 3px solid #ddd;
+    border-radius: 50%;
+}
+
+.personal-posts {
+    display: grid;
+    grid-auto-columns: 1fr 3fr;
+    justify-items: center;
+    gap: 30px;
+}
+
+.edit-and-delete-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.user-post-item {
+    background: white;
+    width: 400px;
+    margin: 0px 20px 25px 20px;
+    border-radius: 10px;
+    padding: 20px;
+    height: 117px;
+}
+
+.blueLikeButton {
+    color: blue;
 }

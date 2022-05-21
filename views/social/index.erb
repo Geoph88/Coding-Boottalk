@@ -1,18 +1,22 @@
 
-<section>
+
 <% if logged_in? %>
-<h2>Welcome <%= current_user['name'] %></h2>
+<section class="home-page">
+    <header>
+        <h2>Welcome <%= current_user['name'] %></h2>
+    </header>
 
+    <aside class="side-user-bar">
+        <a href="/social/new">Add new post</a>
 
-    <aside>
-    <a href="/social/new">Add new post</a>
+        <a href="/social/user_page">Your page</a>
 
-    <form action="/sessions" method="POST">
-        <input type="hidden" name="_method" value="delete">
-        <button>Console.Logout</button>
-    </form>
+        <form action="/sessions" method="POST">
+            <input type="hidden" name="_method" value="delete">
+            <button>Console.Logout</button>
+        </form>
 
-    <a href="/social/user_page">Your page</a>
+        <button id="night-mode-button">Night Mode!</button>
     </aside>
 
     <section class="all-posts">
@@ -26,22 +30,27 @@
             <span>
                 <p id="home-page-post"><%= posts['post'] %></p>
                 <p id="home-page-feeling">Feeling: <%= posts['feeling'] %></p>
+                <button id="like_button">0 Likes</button>
             </span>
         </article>
         </form>
         <% end %>
     </section>
+</section>
 
 <% else %>
-    <div class='heading container'>
+    <section>
+    <div class="heading-container">
         <h1>Coding Boottalk</h1>
     </div>
     <div class="sign_up_and_log_in_button">
-    <a href="/user/sign_up" class="sign_up">Sign up</a>
-    <a href="/login" class="login">login</a>
-    <article class="about_us_container"><p class="about_us">Welcome to Coding Boottalk! A pseudo social media app where coding bootcamp students can scream into the void about their struggles or their wins. You won't be able to comment on posts or keep track of notifications, but this is the work of 7 weeks of blood sweat and tears of coding bootcamp student Geoff Sizgoric. To check out the project brief and the code, click here to view his <a href="https://github.com/Geoph88">github.</a></p></article>
-    </div>
+        <a href="/user/sign_up" class="sign_up">Sign up</a>
+        <a href="/login" class="login">login</a>
+        <article class="about_us_container"><p class="about_us">Welcome to Coding Boottalk! A pseudo social media app where coding bootcamp students can scream into the void about their struggles or their wins. You won't be able to comment on posts or keep track of notifications, but this is the work of 7 weeks of blood sweat and tears of coding bootcamp student Geoff Sizgoric. To check out the project brief and the code, click here to view his <a href="https://github.com/Geoph88">github.</a></p></article>
+        
+    </section>
 <% end %>
+
 
 
 

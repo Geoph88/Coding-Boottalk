@@ -1,22 +1,19 @@
-console.log('hello')
+var getLikeBtn = document.getElementById('like_button')
+var like = '1 Likes'
+var getNightModeBtn = document.getElementById('night-mode-button')
+var getBodyTag = document.querySelector('body')
 
-var date = Date()
-var timeOfPost = date.slice(0, 24)
-console.log(timeOfPost)
-var getTimeTag = document.querySelector('tag')
-var getButton = document.querySelector('button')
-var getCreatePostButton = document.querySelector('.new_post_button')
-
-// function dateAndTime() {
-
-//     getTimeTag.textContent = 'hey'
-// }
-
-getButton.addEventListener('click', function(event){
-    if(event.target.className === 'new_post_button'){
-        console.log(timeOfPost)
-        getTimeTag.textContent = 'hey'
-        }
+getLikeBtn.addEventListener('click', function(){
+    if (getLikeBtn.textContent === '0 Likes'){
+        getLikeBtn.classList.toggle('blueLikeButton')
+        getLikeBtn.textContent = like
+    } else {
+        getLikeBtn.classList.toggle('blueLikeButton')
+        getLikeBtn.textContent = '0 Likes'
     }
-)
+})
+
+getNightModeBtn.addEventListener('click', function(){
+    getBodyTag.classList.toggle('night-mode')
+})
 
