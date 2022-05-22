@@ -1,12 +1,16 @@
+body {
+    background-color: rgba(0, 115, 255, 0.771);
+    max-width: 1024px;
+}
+
 .night-mode {
     background-color: black;
 }
 
 .home-page {
-    display: grid;
-    justify-content: center;
-    justify-items: start;
-    grid-auto-columns: 1fr 3fr;
+    display: flex;
+    margin: auto;
+    max-width: 100%;
 }
 
 .heading-container {
@@ -90,10 +94,17 @@ a:hover {
 }
 
 .post-heading img {
-    width: 100px;
-    height: 100px;
-    border: 3px solid #ddd;
+    width: 5em;
+    height: 5em;
+    border: 1px solid grey;
     border-radius: 50%;
+    margin-top: 0.5em;
+    margin-left: 0.5em;
+}
+
+h3 {
+    margin-right: 1em;
+    overflow-wrap: break-word;
 }
 
 .post-item {
@@ -102,26 +113,29 @@ a:hover {
     margin: 0px 20px 25px 20px;
     border-bottom-left-radius: 40px;
     border-bottom-right-radius: 40px;
-    padding-top: 20px;
+    border-top: solid 1px grey;
 }
 
 #home-page-post {
     margin: 15px;
+    overflow-wrap: break-word;
 }
 
 #home-page-feeling {
     margin: 15px;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .side-user-bar {
     display: flex;
     flex-direction: column;
     gap: 50px;
-}
-
-header {
-    display: flex;
-    justify-content: center;
+    background-color: white;
+    height: 30%;
+    padding: 20px;
+    border-radius: 10%;
+    position: fixed;
 }
 
 .add-a-new-post-page {
@@ -144,8 +158,27 @@ input {
     box-sizing: border-box;
 }
 
+#like_button {
+    margin: auto;
+}
+
+.time-and-date {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin: 0.5em;
+}
+
 ul {
     list-style-type: none;
+}
+
+.resources-side-bar {
+    height: 20em;
+    background-color: white;
+    position: fixed;
+    right: 0;
+    margin: 0.5em;
 }
 
 /* css for user_page.erb */
@@ -157,18 +190,10 @@ ul {
     margin-bottom: 20px;
 }
 
-.user-heading img {
-    width: 200px;
-    height: 200px;
-    border: 3px solid #ddd;
-    border-radius: 50%;
-}
-
 .personal-posts {
-    display: grid;
-    grid-auto-columns: 1fr 3fr;
+    display: flex;
     justify-items: center;
-    gap: 30px;
+    justify-content: space-around;
 }
 
 .edit-and-delete-container {
@@ -182,9 +207,54 @@ ul {
     margin: 0px 20px 25px 20px;
     border-radius: 10px;
     padding: 20px;
-    height: 117px;
+}
+
+.side-user-page-bar {
+    background-color: white;
+    height: 3em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    left: 10%;
+    gap: 30px;
+    border-radius: 10%;
+    padding: 10px;
 }
 
 .blueLikeButton {
     color: blue;
+}
+
+.user-heading img {
+    width: 5em;
+    height: 5em;
+    border: 1px solid grey;
+    border-radius: 50%;
+    margin-top: 0.5em;
+    margin-left: 0.5em;
+}
+
+/* styling other_user_page.erb */
+
+.other_user_page_heading {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: white;
+}
+
+.other_user_page_heading img {
+    width: 180px;
+    height: 180px;
+    border: 3px solid #ddd;
+    border-radius: 50%;
+}
+
+.other-user-posts {
+    display: flex;
+    flex-direction: column;
+    width: 1024px;
+    margin: auto;
 }

@@ -3,6 +3,7 @@ var like = '1 Likes'
 var getNightModeBtn = document.getElementById('night-mode-button')
 var getBodyTag = document.querySelector('body')
 
+
 getLikeBtn.addEventListener('click', function(){
     if (getLikeBtn.textContent === '0 Likes'){
         getLikeBtn.classList.toggle('blueLikeButton')
@@ -16,4 +17,5 @@ getLikeBtn.addEventListener('click', function(){
 getNightModeBtn.addEventListener('click', function(){
     getBodyTag.classList.toggle('night-mode')
 })
+
 

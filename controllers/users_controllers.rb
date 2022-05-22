@@ -9,24 +9,29 @@ post '/create_user' do
     bootcamp = params['bootcamp']
     password = params['password']
 
-    create_user(name, email, image_url, bootcamp, password)
+    users = find_user_by_email(email)
+    user_name = get_user_by_name(name)
 
-    redirect '/'
+    if users == nil && user_name == nil
+
+        create_user(name, email, image_url, bootcamp, password)
+
+        redirect '/'
+    else
+        redirect '/users/email_exists'
+    end
 end
 
+get '/users/email_exists' do
+    erb :'users/email_exists'
+end
 
 get '/user/:user_id/other_user_page/' do
-    id = params['id']
-    user_id = params['user_id']
 
-    other_user_information = get_user_by_id(user_id)
-    social_posts = get_other_user_posts(user_id) 
+    user_id = params['user_id']
+    social_posts = get_user_by_id(user_id)
 
     erb :'users/other_user_page', locals: {
-        
-        other_user_information: other_user_information,
-
         social_posts: social_posts
-
     }
 end

@@ -1,14 +1,19 @@
 
-<% social_posts.each do |posts| %>
-    <article class="post-item">
 
-        <p><%= posts['post'] %></p>
-        <p>Feeling: <%= posts['feeling'] %></p>
+<header class="other_user_page_heading">
+<img src="<%= social_posts[0]['image_url'] %>" class="other-user-image"alt="">
+                <h2 class="other-user-name"><%= social_posts[0]['name'] %></h2>
+    <h3 class="other_user_bootcamp"><%= social_posts[0]['bootcamp'] %></h3>
+</header>
 
-    </article>
 
-<% end %>
-
+<article class="other-user-posts">
+    <% social_posts.each do |posts| %>
+    <time class="time-and-date"><%= posts['time_and_date'] %></time>
+            <p class="other-user-post"><%= posts['post'] %></p>
+            <p class="other-user-feeling">Feeling: <%= posts['feeling']%></p>
+    <% end %>
+</article>
 
 
 

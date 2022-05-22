@@ -1,16 +1,15 @@
 
 
 <% if logged_in? %>
-<section class="home-page">
+
     <header>
         <h2>Welcome <%= current_user['name'] %></h2>
     </header>
 
+<section class="home-page">
     <aside class="side-user-bar">
         <a href="/social/new">Add new post</a>
-
         <a href="/social/user_page">Your page</a>
-
         <form action="/sessions" method="POST">
             <input type="hidden" name="_method" value="delete">
             <button>Console.Logout</button>
@@ -18,6 +17,7 @@
 
         <button id="night-mode-button">Night Mode!</button>
     </aside>
+
 
     <section class="all-posts">
         <% social_posts.each do |posts| %>
@@ -28,7 +28,7 @@
             </div>
         <article class="post-item">
             <span>
-                <p><%= posts['time_and_date'] %></p>
+                <time class="time-and-date"><%= posts['time_and_date'] %></time>
                 <p id="home-page-post"><%= posts['post'] %></p>
                 <p id="home-page-feeling">Feeling: <%= posts['feeling'] %></p>
                 <button id="like_button">0 Likes</button>
@@ -37,6 +37,21 @@
         </form>
         <% end %>
     </section>
+
+    <aside class="resources-side-bar">
+    <h2>Stuck in bug city?</h2>
+    <p>check out the below resources</p>
+    <ul>
+    <li>MDN</li>
+    <li>array-methods</li>
+    <li>How to break down a solution</li>
+    <li>sinatra cheat sheet</li>
+    <li>basic javascript</li>
+    <li>freecodecamp</li>
+    </ul>
+    </aside>
+
+
 </section>
 
 <% else %>
@@ -48,8 +63,6 @@
         <a href="/user/sign_up" class="sign_up">Sign up</a>
         <a href="/login" class="login">login</a>
         <article class="about_us_container"><p class="about_us">Welcome to Coding Boottalk! A pseudo social media app where coding bootcamp students can scream into the void about their struggles or their wins. You won't be able to comment on posts or keep track of notifications, but this is the work of 7 weeks of blood sweat and tears of coding bootcamp student Geoff Sizgoric. To check out the project brief and the code, click here to view his <a href="https://github.com/Geoph88">github.</a></p></article>
-        
-
     </section>
 <% end %>
 

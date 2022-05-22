@@ -1,18 +1,18 @@
 <% if logged_in? %>
 
-<header class="user_heading">
+<header class="user-heading">
     <img src="<%= current_user['image_url']%>" alt="">
     <h1><%= current_user['name'] %>'s Page</h1>
 </header>
 
 <section class="personal-posts">
-
-    <aside class="side-user-bar">
+    <aside class="side-user-page-bar">
             <a href="/social/new">Add new post</a>
             <form action="/sessions" method="POST">
                 <input type="hidden" name="_method" value="delete">
                 <button>Logout</button>
             </form>
+            <a href="/">Home page</a>
     </aside>
 
     <article>
