@@ -10,9 +10,8 @@ post '/create_user' do
     password = params['password']
 
     users = find_user_by_email(email)
-    user_name = get_user_by_name(name)
 
-    if users == nil && user_name == nil
+    if users == nil
 
         create_user(name, email, image_url, bootcamp, password)
 
