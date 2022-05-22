@@ -1,5 +1,5 @@
 var getLikeBtn = document.getElementById('like_button')
-var like = '1 Likes'
+var like = '1 Like'
 var getNightModeBtn = document.getElementById('night-mode-button')
 var getBodyTag = document.querySelector('body')
 

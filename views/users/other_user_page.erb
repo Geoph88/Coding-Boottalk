@@ -6,15 +6,17 @@
     <h3 class="other_user_bootcamp"><%= social_posts[0]['bootcamp'] %></h3>
 </header>
 
-
-<article class="other-user-posts">
-    <% social_posts.each do |posts| %>
-    <time class="time-and-date"><%= posts['time_and_date'] %></time>
-            <p class="other-user-post"><%= posts['post'] %></p>
-            <p class="other-user-feeling">Feeling: <%= posts['feeling']%></p>
-    <% end %>
-</article>
-
+<section class="other-user-post-container">
+    <article class="other-user-posts">
+        <% social_posts.each do |posts| %>
+        <span class="actual-other-user-container">
+        <time class="time-and-date"><%= posts['time_and_date'] %></time>
+                <p class="other-user-post"><%= posts['post'] %></p>
+                <p class="other-user-feeling">Feeling: <%= posts['feeling']%></p>
+        </span>
+        <% end %>
+    </article>
+</section>
 
 
 
