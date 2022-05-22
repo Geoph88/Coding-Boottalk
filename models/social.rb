@@ -7,7 +7,7 @@ def all_posts
 end
 
 def user_posts
-    run_sql("SELECT * FROM posts WHERE user_id = $1" ,[current_user['id']])
+    run_sql("SELECT * FROM posts WHERE user_id = $1 ORDER BY id DESC" ,[current_user['id']])
 end
 
 def create_post(post, feeling, time_and_date, user_id)
@@ -25,12 +25,3 @@ end
 def delete_post(id)
     run_sql("DELETE FROM posts WHERE id = $1", [id])
 end
-
-# SELECT users.name, users.image_url, users.bootcamp AS user_name, posts.name, posts.image_url, posts.post FROM posts INNER JOIN users ON users.id = posts.user_id;
-
-# SELECT users.bootcamp, users.image_url, users.name AS user_name, posts.post, posts.feeling FROM posts INNER JOIN users ON users.id = posts.user_id;
-
-
-# SELECT users.name, users.image_url AS user_name, posts.post, posts.feeling FROM posts INNER JOIN users ON users.id = posts.user_id
-
-# "SELECT users.bootcamp, users.image_url, users.name AS user_name, posts.post, posts.feeling FROM posts INNER JOIN users ON users.id = posts.user_id;"

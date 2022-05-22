@@ -5,10 +5,10 @@
 <section class="add-a-new-post-page">
     <form action="/social" method="POST">
         <label for="">Post:</label>
-        <input type="text" name="post" class="create-a-new-post">
+        <input type="text" name="post" maxlength="200" class="create-a-new-post">
 
         <label for="">Feeling:</label>
-        <input type="text" name="feeling" class="create-a-new-post">
+        <input type="text" name="feeling" maxlength="30"class="create-a-new-post">
 
         <label for="">Time and Date:</label>
         <input type="text" name="time_and_date" value="<%= @time_and_date %>" readonly = "readonly" class="create-a-new-post">

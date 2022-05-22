@@ -4,10 +4,10 @@
     <input type="hidden" name="_method" value="put">
 
     <label for="">Post:</label>
-    <input type="text" name='post' value="<%= posts['post']%>">
+    <input type="text" name='post' value="<%= posts['post']%>" maxlength="200">
 
     <label for="">Feeling:</label>
-    <input type="text" name='feeling' value="<%= posts['feeling'] %>">
+    <input type="text" name='feeling' value="<%= posts['feeling'] %>" maxlength="30">
 
     <button>Update post</button>
 </form>
