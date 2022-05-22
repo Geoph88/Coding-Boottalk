@@ -2,7 +2,7 @@
 
 ## Our project
 
-Project 2 is to create a a working full-stack application that is hosted somewhere on the internet. My solution to this is to create a psuedo social media for coding bootcamp attendees called Coding Boottalk It is known as a psuedo social media as while users cannot interact directly with each other thorugh chat and messages, they are able to .
+Project 2 is to create a a working full-stack application that is hosted somewhere on the internet. My solution to this is to create a psuedo social media for coding bootcamp attendees called Coding Boottalk It is known as a psuedo social media as while users cannot interact directly with each other through chat and messages, they are able to create, edit and delete their own posts about their coding bootcamp experience. This app is most compatible with screens of 1024px.
 
 <a href= "https://still-sands-56902.herokuapp.com/">Visit my project here</a>
 

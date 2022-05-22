@@ -62,7 +62,7 @@ body {
 .sign-up-section{
     display: flex;
     justify-content: center;
-    margin-top: 300px;
+    margin: auto;
 }
 
 button:hover {
@@ -335,4 +335,14 @@ ul {
 .email-already-exists-container{
     background-color: white;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+.sign-up-page {
+    display: flex;
+    justify-content: center;
+}
+
+.log-in-page {
+    display: flex;
+    justify-content: center;
 }
