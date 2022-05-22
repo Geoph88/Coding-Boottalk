@@ -11,7 +11,10 @@ post '/sessions' do
     if user && BCrypt::Password.new(user['password_digest']) == password
         session['user_id'] = user['id']
         redirect '/'
+    else
+        redirect '/users/email_exists'
     end
+
 end
 
 delete '/sessions' do

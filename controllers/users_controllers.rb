@@ -15,7 +15,7 @@ post '/create_user' do
 
         create_user(name, email, image_url, bootcamp, password)
 
-        redirect '/'
+        redirect '/login'
     else
         redirect '/users/email_exists'
     end
