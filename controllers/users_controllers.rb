@@ -34,3 +34,24 @@ get '/user/:user_id/other_user_page/' do
         social_posts: social_posts
     }
 end
+
+get '/users/:id/edit' do
+    id = params['id']
+
+    users = find_user_by_id(id)
+
+    erb :'users/edit', locals: { 
+        users: users
+    }
+end
+
+put '/users/:id' do
+
+    id = params['id']
+    name = params['name']
+    image_url = params['image_url']
+    
+    update_user_details(name, image_url, id)
+    redirect '/social/user_page'
+
+end

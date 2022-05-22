@@ -26,3 +26,7 @@ end
 def get_user_by_id(user_id)
     run_sql("SELECT users.bootcamp, users.image_url, users.name, posts.user_id AS user_id, posts.post, posts.feeling, posts.time_and_date FROM posts INNER JOIN users ON users.id = posts.user_id WHERE user_id = $1 ORDER BY posts.id DESC", [user_id])
 end
+
+def update_user_details(name, image_url, id)
+    run_sql("UPDATE users SET name = $1, image_url = $2 WHERE id = $3", [name,image_url, id])
+end

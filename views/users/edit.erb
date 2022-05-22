@@ -1,0 +1,13 @@
+<h1 class="change-your-mind">Change your mind?</h1>
+
+<form action="/users/<%= users['id'] %>" method=POST>
+    <input type="hidden" name="_method" value="put">
+
+    <label for="">Name:</label>
+    <input type="text" name='name' value="<%= users['name']%>" maxlength="20">
+
+    <label for="">Profile Picture:</label>
+    <input type="text" name='image_url' value="<%= users['image_url'] %>">
+
+    <button>Update Details</button>
+</form>
